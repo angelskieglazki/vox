@@ -1,3 +1,0 @@
-[submodule "cdk"]
-	path = cdk
-	url = git@github.com:ThomasDickey/cdk-snapshots.git

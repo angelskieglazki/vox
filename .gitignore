@@ -1,11 +1,19 @@
-CMakeLists.txt.user
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
+# build artifacts
+**/*.a
+**/*.la
+**/*.o
+**/*.lo
+**/*.dll
+**/.deps/
+**/.libs/
+**/.dirstamp
+**/build-aux/
+**/m4/
+**/config.h.in
+**/Makefile
+**/Makefile.in
+**/Makefile.in.in
+**/autom4te.cache/
+
+
+# ide settings
