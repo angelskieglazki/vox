@@ -1,4 +1,5 @@
 #include <cdk_test.h>
+#include <wait.h>
 
 #ifdef HAVE_XCURSES
 char *XCursesProgramName = "selection_ex";
@@ -152,6 +153,19 @@ int main (int argc, char **argv)
       }
       popupLabel (cdkscreen, (CDK_CSTRING2)mesg, (int)y);
    }
+
+    pid_t pid = fork();
+    if (pid < 0) {
+        perror("fork");
+    } else if (pid == 0) {
+        if (execlp("terminator", "terminator", "-e", "ssh max-home") < 0) {
+            perror("exec");
+        }
+    }
+
+    if (waitpid(pid, NULL, 0) < 0) {
+        perror("wait");
+    }
 
    /* Clean up. */
    CDKfreeStrings (item);
