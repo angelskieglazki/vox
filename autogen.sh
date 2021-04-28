@@ -17,9 +17,10 @@
   echo "ftp://ftp.gnu.org/pub/gnu/."
   exit 1
 }
-aclocal
-echo "\n" Running autoconf --verbose "\n"
-autoconf --verbose
-automake --add-missing
+
+echo "\n" Running autoreconf --verbose --install --force "\n"
+autoreconf --no-recursive --verbose --install --force
+intltoolize --force
+
 echo "\n" Removing autom4te.cache "\n"
 rm -rf autom4te.cache
